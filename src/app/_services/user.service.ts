@@ -9,8 +9,7 @@ const httpOptions = {
   })
 };
 
-// const CAR_URL = 'https://design-car.herokuapp.com/api/cars';
-const CAR_URL = 'http://localhost:8081/api/cars';
+const CAR_URL = 'https://design-car.herokuapp.com/api/cars';
 @Injectable({
   providedIn: 'root'
 })
