@@ -1,0 +1,133 @@
+<H2>Edit Car</H2>
+
+<div class="content" role="'main">
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+
+      <form (ngSubmit)="modifyCar(f)" #f="ngForm">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 form-group">
+            <label for="id">Car id:</label>
+            <input [(ngModel)]="editCar.id" class="form-control" type="number" id="id" name="id"
+                   placeholder="please choose car id number" required #id="ngModel">
+            <div style="color:red" *ngIf="id.errors">
+              <p *ngIf="id.errors.required && (id.dirty || id.touched)">
+                Please, choose which car would you like to edit.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 form-group">
+            <label for="mark"> Mark: </label>
+            <input [(ngModel)]="editCar.mark" class="form-control" type="text" id="mark" name="mark"
+                   required #mark="ngModel">
+            <div style="color:red" *ngIf="mark.errors">
+              <p *ngIf="mark.errors.required && (mark.dirty || mark.touched)">
+                Mark cannot be empty.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 form-group">
+            <label for="model"> Model:</label>
+            <input [(ngModel)]="editCar.model" class="form-control" type="text" id="model" name="model"
+                   required #model="ngModel">
+            <div style="color:red" *ngIf="model.errors">
+              <p *ngIf="model.errors.required && (model.dirty || model.touched)">
+                Model cannot be empty.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 form-group">
+            <label for="image"> Image:</label>
+            <select id="image" name="image" class="form-control" [(ngModel)]="editCar.imageName"
+                    required #imageName="ngModel">
+              <option value="ambd5_silver.png">Aston Martin silver</option>
+              <option value="ambd10_black.png">Aston Martin black</option>
+              <option value="audi_a6_navyblue.png">Audi A6 navy blue</option>
+              <option value="bmw_m3.png">BMW M3 blue</option>
+              <option value="classic_black.png">Classic Rolls Royce black</option>
+              <option value="classic_black2.png">Classic Rolls Royce black 2</option>
+              <option value="classic_blue.png">Classic blue</option>
+              <option value="classic_navyblue.png">Classic navyblue</option>
+              <option value="classic_red.png">Classic red</option>
+              <option value="classic_silver.png">Classic silver</option>
+              <option value="Ferrari-599-GTB-Fiorano.png">Ferrari red</option>
+              <option value="ford_mustang_red.png">Ford Mustang red</option>
+              <option value="mazda_blue.png">Mazda blue</option>
+              <option value="mazda_silver.png">Mazda silver</option>
+              <option value="mercedes_red.png">Mercedes red</option>
+              <option value="tesla_navyblue.png">Tesla navyblue</option>
+              <option value="toyota_camry_black.png">Toyota Cambry black</option>
+              <option value="toyota_red.png">Toyota red</option>
+              <option value="toyota_silver.png">Toyota silver</option>
+            </select>
+            <div style="color:red" *ngIf="imageName.errors">
+              <p *ngIf="imageName.errors.required && (imageName.dirty || imageName.touched)">
+                Image cannot be empty.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 form-group">
+            <label for="color">Color:</label>
+            <select id="color" name="color" class="form-control" [(ngModel)]="editCar.color"
+                    required #color="ngModel">
+              <option value="RED">RED</option>
+              <option value="BLUE">BLUE</option>
+              <option value="NAVY_BLUE">NAVY BLUE</option>
+              <option value="SILVER">SILVER</option>
+              <option value="BLACK">BLACK</option>
+              <option value="NONE">NONE</option>
+            </select>
+
+            <div style="color:red" *ngIf="color.errors">
+              <p *ngIf="color.errors.required && (color.dirty || color.touched)">
+                Color cannot be empty. Available colors are: RED, BLUE, NAVY BLUE, SILVER, BLACK.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4 form-group">
+            <label for="date">Date of production:</label>
+            <input [(ngModel)]="editCar.dateOfProduction" class="form-control" type="date" id="date" name="date"
+                   required #dateOfProduction="ngModel">
+            <div style="color:red" *ngIf="dateOfProduction.errors">
+              <p *ngIf="dateOfProduction.errors.required && (dateOfProduction.dirty || dateOfProduction.touched)">
+                Please, choose date of production.
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-lg-12">
+            <button class="btn btn-success" type="submit">Save</button>
+          </div>
+        </div>
+      </form>
+
+      <div *ngIf="editCar != null">
+        <h3>Edited</h3>
+        <ul class="col-sm-12 col-md-4 list-group">
+          <li class="list-group-item col-sm-12">Car Id: {{editCar.id}}</li>
+          <li class="list-group-item">Mark: {{editCar.mark}}</li>
+          <li class="list-group-item">Model: {{editCar.model}}</li>
+          <li class="list-group-item">Color: {{editCar.color}}</li>
+          <li class="list-group-item">Date of production: {{editCar.dateOfProduction}}</li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <br>
+  <div *ngIf="isCarEdited == true">
+    <h4>Car has been edited</h4>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+      </div>
+      <button class="btn btn-success" type="submit" (click)="goToList()">go to car list</button>
+    </div>
+  </div>
+</div>

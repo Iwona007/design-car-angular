@@ -1,0 +1,32 @@
+<div class="container">
+  <br>
+  <h5>In order to design your car, please register or login first.</h5>
+  <br>
+  <p>Available cars</p>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Mark</th>
+      <th scope="col">Model</th>
+      <th scope="col">Image</th>
+      <th scope="col">Color</th>
+      <th scope="col">Dat of production</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars ">
+      <td>
+        {{ car.id }}
+      </td>
+
+      <td> {{ car.mark }}</td>
+      <td>{{ car.model }}</td>
+      <td><img src="assets/cars/{{car.imageName}}" width="40" height="30"></td>
+      <td>{{ car.color }}</td>
+      <td>{{ car.dateOfProduction }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

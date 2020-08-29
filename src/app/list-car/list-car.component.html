@@ -1,0 +1,26 @@
+<div class="content" role="main">
+  <br>
+  <h3>Get All cars:</h3>
+
+  <div *ngFor="let car of cars">
+    <ul>
+      <li>Car Id: {{car.id}} <br/>
+        <img class="displayed" src="assets/cars/{{car.imageName}}" width="400" height="300">
+      </li>
+      <li>Mark: {{car.mark}}</li>
+      <li>Model: {{car.model}}</li>
+      <li>Image: {{car.imageName}}</li>
+      <li>Color: {{car.color}}</li>
+      <li>Date: {{car.dateOfProduction}}</li>
+      <button class="btn btn-danger" type="submit" (click)="deleteCarById(car.id)" *ngIf="canDeleteCar">Delete</button>
+    </ul>
+  </div>
+  <div *ngIf="isCarDeleted == true">
+    <hr>
+    <h3>Car has been deleted</h3>
+    <div class="row">
+      <button class="btn btn-success" type="submit" (click)="refresh()">refresh</button>
+    </div>
+  </div>
+</div>
+
