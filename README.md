@@ -1,27 +1,75 @@
-# DesignCarAngular
+"Design your car" prototype application.
+This part application is connected with backend part: https://github.com/Iwona007/car-crud-jwt-akdemia-spring
+Please go to above http address to be able to read about used technology. There also are information how to 
+use this application in Java and Spring Boot. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+Application has been deployed on heroku: 
 
-## Development server
+User technology: 
+Angular CLI 8.3.21
+Typescript 3.5.3
+Bootstrap 4
+HTML
+CSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Tests have been conducted via Google Chrome and Mozilla FireFox Browsers. 
 
-## Code scaffolding
+This part description show only how to use this application in Angular which is connected with backend.
+ 
+At first on menu user will see menu according to role or lack of this role. User without any privilege will see  Car Api, Home, 
+and opportunity to register or login.  
+For admin it will be: Car Api, Home, Car list, Add Car, Edit Car, Admin and LogOut.
+For user role it will be: Car Api, Home, Car list, Edit Car, User and LogOut.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+if we go to endpoint /home all user are able to see all cars list even if user is not logged in or 
+registered. This list show sum up all cars.
 
-## Build
+Secondly this application has two user already in database: an "Admin" and a "User" with different permission.
+For instance user with user role has smaller privilege than admin role however these permissions are the same as admin's.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+In this application user is allowed to: 
+get all car => endpoints: /list-car.
+edit car which has been found by id => endpoints: /edit-car and. After edit car at the button of the page information about edit car
+and button "go to list" show. This allow to come back to car list nad see a result. 
+Methods for these endpoints are in separated components: add-car.components.ts and edit-car.component.ts
+This method/endpoints behave the same for user and admin role. 
 
-## Running unit tests
+Thirdly admin role has wider privilege than user. Additionally, for admin privilege car-list has additional method to delete car based 
+on id. Moreover when car is deleted, at the button of the page a new button for refresh page is shown. 
+get all car => endpoints: /list-car. 
+Also methods for deleteCarById is in add-car.component.ts
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Next add car => endpoints: /add-car
+Method for those action are also in add-car.component.ts. When cars has been added correctly user is able to see information about this
+and button which allow to go to all car list under /list-car endpoints.
 
-## Running end-to-end tests
+Please be aware that "Token" information in admin and user panel is only to show haw the application works. All credential and sensitive
+information should be store in safe place and not be expose on the website. 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Images from tests which I executed are stored in src/assets/img. here I have attached only a couple of them and I invite you to see more
+in mentioned folder.  All images have result in developer console.
 
-## Further help
+image for admin profile:
+![App_images](src/assets/img/admin_profile.PNG)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+image for home:
+![App_images](src/assets/img/home.PNG)
+
+images for register validation:
+![App_images](src/assets/img/register_error.PNG)
+
+images for login validation:
+![App_images](src/assets/img/login_error_pass.PNG)
+
+images for add car method:
+![App_images](src/assets/img/admin_add_car.PNG)
+
+images for car list admin view:
+![App_images](src/assets/img/admin_carlist.PNG)
+
+images for car list user view:
+![App_images](src/assets/img/user_carlist.PNG)
+
+images for edit car validation:
+
+![App_images](src/assets/img/edit_car_validation.PNG)
