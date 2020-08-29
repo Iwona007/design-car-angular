@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Car} from '../model/car';
+import {UserService} from '../_services/user.service';
 
 @Component({
   selector: 'app-add-car',

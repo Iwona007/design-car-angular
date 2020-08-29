@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Car} from '../model/car';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import {UserService} from '../_services/user.service';
 
 @Component({
   selector: 'app-edit-car',
