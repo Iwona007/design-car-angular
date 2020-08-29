@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-image: url("assets/background.png");
+}
+
+button.btn.btn-danger {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+button.btn.btn-success {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+img.displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+h5 {
+  text-align: center;
+}
+
