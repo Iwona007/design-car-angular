@@ -1,5 +1,5 @@
 "Design your car" prototype application.
-This part application is connected with backend part: https://github.com/Iwona007/car-crud-jwt-akdemia-spring
+This part application is connected with backend part: https://github.com/Iwona007/design-car-angular
 Please go to above http address to be able to read about used technology. There also are information how to 
 use this application in Java and Spring Boot. 
 
@@ -14,6 +14,11 @@ CSS
 
 Tests have been conducted via Google Chrome and Mozilla FireFox Browsers. 
 
+This application has been created in order to enjoy in design car. User can play with different attributes such as:
+Mark, model, color, image and date of production. It is recommended to mix this elements e.g: user can edit
+car with id number 1 and change mark, model, color, image and date for these value which he/she would like to receive.
+In other words they can create Aston Martin G3  with image like Royce Rolls in classic version  with color: Navy blue
+and date of production 1989. And as a result user is able to receive his/her car prototype. 
 This part description show only how to use this application in Angular which is connected with backend.
  
 At first on menu user will see menu according to role or lack of this role. User without any privilege will see  Car Api, Home, 
