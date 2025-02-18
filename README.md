@@ -3,12 +3,12 @@ https://github.com/Iwona007/design-car-angular Please go to the above http addre
 read about what technology was used in the backend. There also are information on how to use this 
 application in Java and Spring Boot.
 
-This application has been deployed on heroku: https://design-car-angular.herokuapp.com/home
+<!-- This application has been deployed on heroku: https://design-car-angular.herokuapp.com/home 
 
 Please be patient for Heroku because when the application is not in use, it enters sleep mode. 
 So that mean when users go to the above address they need to wait a little bit longer for the 
 first time. Moreover, data from the database needs more time to load so please try to refresh the 
-website till data comes up.  
+website till data comes up.  -->
 
 Used technology: 
 Angular CLI 8.3.21
